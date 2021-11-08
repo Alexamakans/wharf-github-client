@@ -268,6 +268,9 @@ github.com/iver-wharf/messagebus-go v0.1.1/go.mod h1:Jan1LPVF2P1J+dTGcwE6QBI/+kx
 github.com/iver-wharf/wharf-api v0.0.0-20211021131848-46403dfc03dd/go.mod h1:JxGbvNdkT1VQ3u9YO2aT0S92g2PohPMGQGLAxPIHVgI=
 github.com/iver-wharf/wharf-api v0.0.0-20211022062618-90bebcf4e5a1 h1:l8xhr85ih2cEKAqt5DuMYmnQBKDS9KMPCHHYZL3KQUo=
 github.com/iver-wharf/wharf-api v0.0.0-20211022062618-90bebcf4e5a1/go.mod h1:q99Cdpql303cE8ULmKAPuDtfuY4LNcAd/wUyzLy4GLI=
+github.com/iver-wharf/wharf-api-client-go v1.4.0 h1:P1+r7ltJyYJma2g4nRfat7ugeWd4ktfC6q67KB65TeQ=
+github.com/iver-wharf/wharf-api-client-go v1.4.0/go.mod h1:nv5UChpadYGVvsHhfSw4ss7cOFoTiAJWejzZ+7/23cg=
+github.com/iver-wharf/wharf-core v1.1.0/go.mod h1:dpYtdL52i17Aue7An6mJL9dICeulBDsGZO/PxZYHgrE=
 github.com/iver-wharf/wharf-core v1.2.0 h1:iwtnBh6XbDyb/Z7pAMZMbXNIFM63fp/qS9DChxQ+ukA=
 github.com/iver-wharf/wharf-core v1.2.0/go.mod h1:dpYtdL52i17Aue7An6mJL9dICeulBDsGZO/PxZYHgrE=
 github.com/jackc/chunkreader v1.0.0/go.mod h1:RT6O25fNZIuasFJRyZ4R/Y2BbhasbmZXF9QQ7T3kePo=
