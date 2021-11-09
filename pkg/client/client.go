@@ -35,7 +35,7 @@ func (c *Client) FetchFile(projectIdentifier remoteprovider.ProjectIdentifier, f
 		return []byte{}, nil
 	}
 
-	fileContent, _, _, err := githubClient.Repositories.GetContents(c.Context, strings.TrimLeft(repo.GetOwner().GetName(), "/"), repo.GetName(), fileName, nil)
+	fileContent, _, _, err := githubClient.Repositories.GetContents(c.Context, repo.GetOwner().GetName(), repo.GetName(), fileName, nil)
 	if err != nil {
 		return []byte{}, err
 	}
@@ -54,7 +54,7 @@ func (c *Client) FetchBranches(projectIdentifier remoteprovider.ProjectIdentifie
 		return []remoteprovider.WharfBranch{}, nil
 	}
 
-	branches, _, err := githubClient.Repositories.ListBranches(c.Context, strings.TrimLeft(repo.GetOwner().GetName(), "/"), repo.GetName(), nil)
+	branches, _, err := githubClient.Repositories.ListBranches(c.Context, repo.GetOwner().GetName(), repo.GetName(), nil)
 	if err != nil {
 		return []remoteprovider.WharfBranch{}, err
 	}
@@ -122,6 +122,10 @@ func (c *Client) getRepo(githubClient *github.Client, remoteProjectID string) (*
 	repo, _, err := githubClient.Repositories.GetByID(c.Context, id)
 	if err != nil {
 		return nil, fmt.Errorf("fetching github project with ID %q failed on %q: %w", remoteProjectID, c.RemoteProviderURL, err)
+	}
+
+	if repo.GetOwner().GetName() == "" {
+		repo.Owner.Name = &strings.Split(repo.GetFullName(), "/")[0]
 	}
 
 	return repo, nil
