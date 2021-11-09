@@ -1,6 +1,7 @@
 package client
 
 import (
+	"context"
 	b64 "encoding/base64"
 	"fmt"
 	"strconv"
@@ -14,6 +15,12 @@ import (
 // Client implements remoteprovider.Client.
 type Client struct {
 	remoteprovider.BaseClient
+}
+
+func NewClient(ctx context.Context, token, apiURLPrefix, remoteProviderURL string) *Client {
+	return &Client{
+		*remoteprovider.NewClient(ctx, token, apiURLPrefix, remoteProviderURL),
+	}
 }
 
 func (c *Client) FetchFile(projectIdentifier remoteprovider.ProjectIdentifier, fileName string) ([]byte, error) {
